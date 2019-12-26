@@ -1,0 +1,175 @@
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.full {
+    width: 100% !important;
+}
+
+.header {
+    height: 64px;
+    border-bottom: 4px solid #ffd155;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 230, 117, 1) 72%, rgba(255, 149, 0, 1) 100%);
+}
+
+.footer {
+    margin-top: 14px;
+    height: 64px;
+    border-top: 4px solid #ffd155;
+    background: linear-gradient(320deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 230, 117, 1) 72%, rgba(255, 149, 0, 1) 100%);
+}
+
+.header-row {
+    height: 64px;
+    text-align: center;
+}
+
+.header-cell {
+    border-right: 4px solid #f9e8b8;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-cell.current {
+    font-weight: bold;
+}
+
+.header-cell:hover {
+    color: white;
+    border-right: 4px solid white;
+}
+
+.header-dropdown {
+    border: none;
+    background: transparent;
+}
+
+.header-dropdown:hover {
+    color: white;
+    border: none;
+}
+
+.header-dropdown:focus {
+    border: none;
+    outline: none;
+}
+
+.news-block {
+    margin-top: 14px;
+}
+
+.news-spacing {
+    border: 1px solid #444444;
+}
+
+.news-header {
+    font-weight: bold;
+}
+
+.text-right {
+    width: 100%;
+}
+
+.banner {
+    background: rgb(234, 224, 176);
+}
+
+.banner-row {
+    margin-top: 6px;
+    margin-left: 6px;
+    color: white;
+    border-bottom: 4px solid #ffd155;
+    font-size: 18px;
+}
+
+.banner-row:hover {
+    color: rgba(255, 149, 0, 1);
+    border-bottom: 4px solid white;
+}
+
+.banner-row-link:hover {
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn-link {
+    color: black;
+}
+
+.btn-link.decoration-none {
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #ffd155;
+}
+
+.btn-link.white:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.btn-light {
+    width: 128px !important;
+    background-color: #fff275;
+    border: none;
+}
+
+.btn-dark {
+    width: 128px !important;
+    background-color: #ffa628;
+    border: none;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+.modal-buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.display-none {
+    display: none;
+}
+
+.input-group-text {
+    background-color: #fff8b9;
+}
+
+.login-page, .reg-page {
+    margin-top: 16px;
+}
+
+.modal-top-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+a.news-block {
+    text-decoration: none;
+    color: rgba(255, 149, 0, 1);
+}
+
+a.news-block:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}

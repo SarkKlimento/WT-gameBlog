@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game blog</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/newsPage.css">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/main.js"></script>
+<header class="header">
+    <div class="container">
+        <div class="row header-row">
+            <div class="col-lg-2 col-md-4 col-sm-12">
+                <img src="../img/WT_Icon.png" class="full">
+            </div>
+            <div class="col row">
+                <div class="col-2 col-md-3 col-sm-6 header-cell">
+                    <a href="../index.html">Новости</a>
+                </div>
+                <div class="col-2 col-md-3 col-sm-6 header-cell">
+                    Релизы
+                </div>
+                <div class="col-2 col-md-3 col-sm-6 header-cell">
+                    Личный кабинет
+                </div>
+                <div class="dropdown header-cell">
+                    <button class="header-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Другое &#9776;
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">О блоге</a>
+                        <a class="dropdown-item" href="#">Поиск</a>
+                        <a class="dropdown-item" href="#">Мы в ВКонтакте</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row main-image">
+            <img id="main-image" src="">
+        </div>
+        <div class="row text-header">
+            <p id="header-text"></p>
+        </div>
+        <div class="row text-body">
+            <p id="body-text"></p>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Ваш комментарий:</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <button class="btn btn-warning margin-auto">Опубликовать</button>
+        </div>
+        <div class="row">
+            <p class="margin-auto full text-center">Коментарии</p>
+            <div id="comments" class="container">
+
+            </div>
+        </div>
+    </div>
+</article>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            Копирование материалов сайта разрешено только с ссылкой на источник!
+        </div>
+        <div class="row float-right">
+            Разработка сайта - Mikhail Pantsevich
+        </div>
+    </div>
+</footer>
+<script src="../js/newsPage.js"></script>
+</body>
+</html>
