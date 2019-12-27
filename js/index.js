@@ -1,6 +1,17 @@
 let userId;
 
 function load(page) {
+    jQuery.ajax({
+        type: "POST",
+        url: 'php/news.php',
+        dataType: 'json',
+        data: {page: page},
+
+        success: function (obj) {
+            console.log(obj);
+        }
+    });
+
     userId = 'someId';
     document.cookie = "userId=" + userId;
 
