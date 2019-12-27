@@ -1,7 +1,7 @@
 let userId;
 
 function load(page) {
-    jQuery.ajax({
+    $.ajax({
         type: "POST",
         url: 'php/news.php',
         dataType: 'json',
