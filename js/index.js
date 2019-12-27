@@ -5,11 +5,16 @@ function load(page) {
         type: "POST",
         url: 'php/news.php',
         dataType: 'json',
-        data: {page: page},
-
-        success: function (obj) {
-            console.log(obj);
-        }
+        data: {page: page}
+    }).done(data => {
+        console.log('done');
+        console.log(data);
+    }).fail(data => {
+        console.log('fail');
+        console.log(data)
+    }).always(data => {
+        console.log('alvays');
+        console.log(data);
     });
 
     userId = 'someId';
