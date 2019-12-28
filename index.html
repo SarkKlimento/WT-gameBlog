@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="UTF-8">
     <title>Game blog</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,9 +59,9 @@
     </div>
     <div class="row text-right">
         <div class="margin-auto">
-            <button id="prev-page-nav" type="button" class="btn btn-link">< Предыдущая страница</button>
+            <button id="prev-page-nav" type="button" onclick="load(currentPage - 1)" class="btn btn-link">< Предыдущая страница</button>
             <span> | </span>
-            <button id="next-page-nav" type="button" class="btn btn-link">Следующая страница ></button>
+            <button id="next-page-nav" type="button" onclick="load(currentPage + 1)" class="btn btn-link">Следующая страница ></button>
         </div>
     </div>
     <div>
