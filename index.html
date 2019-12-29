@@ -20,34 +20,28 @@
                 <img src="img/WT_Icon.png" class="full">
             </div>
             <div class="col row">
-                <div class="col-2 col-md-3 col-sm-6 header-cell current">
-                    Новости
-                </div>
                 <div class="col-2 col-md-3 col-sm-6 header-cell">
-                    Релизы
+                    <a href="index.html">Новости</a>
                 </div>
                 <div class="col-2 col-md-3 col-sm-6 header-cell">
                     <button type="button" class="btn btn-link white decoration-none" data-toggle="modal"
-                            data-target="#exampleModal" id="login-click-button">
-                        Личный кабинет
+                            data-target="#loginModal" id="login-click-button">
+                        Вход/Регистрация
                     </button>
-                    <button type="button" class="btn btn-link white decoration-none display-none" id="lc-click-button">
-                        Личный кабинет
-                    </button>
-                </div>
-                <div class="dropdown header-cell">
-                    <button class="header-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Другое &#9776;
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">О блоге</a>
-                        <a class="dropdown-item" href="#">Поиск</a>
-                        <a class="dropdown-item" href="#">Мы в ВКонтакте</a>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="user" class="name-block">
+        <div class="exit-button">
+            <button type="button" class="btn btn-link white decoration-none padding-none" onclick="logout()">
+                Выход
+            </button>
+        </div>
+        <div class="user-name-display">
+            <p id="userNameDisplay"></p>
+        </div>
+    </div>
     </div>
 </header>
 <article>
@@ -59,13 +53,17 @@
     </div>
     <div class="row text-right">
         <div class="margin-auto">
-            <button id="prev-page-nav" type="button" onclick="load(currentPage - 1)" class="btn btn-link">< Предыдущая страница</button>
+            <button id="prev-page-nav" type="button" onclick="load(currentPage - 1)" class="btn btn-link">< Предыдущая
+                страница
+            </button>
             <span> | </span>
-            <button id="next-page-nav" type="button" onclick="load(currentPage + 1)" class="btn btn-link">Следующая страница ></button>
+            <button id="next-page-nav" type="button" onclick="load(currentPage + 1)" class="btn btn-link">Следующая
+                страница >
+            </button>
         </div>
     </div>
     <div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -73,7 +71,8 @@
                         <div class="row margin-auto modal-buttons">
                             <button type="button" onclick="modalChange('reg')" class="btn btn-light col">Регистрация
                             </button>
-                            <button type="button" onclick="modalChange('login')" class="btn btn-dark col">Вход</button>
+                            <button type="button" onclick="modalChange('login')" class="btn btn-dark col">Вход
+                            </button>
                         </div>
                         <div class="row reg-page">
                             <p id="reg-text" class="margin-auto modal-top-text">Регистрация</p>
@@ -82,15 +81,16 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">User Name</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Username"
+                                <input name="userName" type="text" class="form-control" aria-label="Username"
+                                       required
                                        aria-describedby="basic-addon1" id="username">
                             </div>
                             <div id="email-field" class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon2">Email</span>
                                 </div>
-                                <input type="email" class="form-control" aria-label="Email"
-                                       aria-describedby="basic-addon2" id="email"
+                                <input name="email" type="email" class="form-control" aria-label="Email"
+                                       aria-describedby="basic-addon2" id="email" required
                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                        title="Поле email должно содержать корректный Email адрес">
                             </div>
@@ -98,15 +98,17 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon3">Password</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Password"
+                                <input name="password" type="text" class="form-control" aria-label="Password"
+                                       required
                                        aria-describedby="basic-addon3" id="password"
                                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
                                        title="В пароле должны содержатся: 1 заглавная буква, 1 число или спец. символ">
                             </div>
                         </div>
                         <div class="row margin-auto modal-buttons">
-                            <button type="button" class="btn btn-light col">Продолжить</button>
+                            <button type="button" class="btn btn-light col" onclick="login()">Продолжить</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

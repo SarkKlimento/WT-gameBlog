@@ -19,7 +19,7 @@ class Database
 
             return $stmt->fetchAll();
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            return "Connection failed: " . $e->getMessage();
         }
     }
 }

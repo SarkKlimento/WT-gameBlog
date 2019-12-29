@@ -115,6 +115,14 @@ img {
     margin: auto;
 }
 
+.margin-none {
+    margin: 0!important;
+}
+
+.padding-none {
+    padding: 0!important;
+}
+
 .btn-light {
     width: 128px !important;
     background-color: #fff275;
@@ -152,6 +160,24 @@ img {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.name-block {
+    position: absolute;
+    right: 0;
+    top: 28px;
+}
+
+.user-name-display {
+    float: right;
+    margin-right: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.exit-button {
+    float: right;
+    margin-right: 30px;
 }
 
 a.news-block {

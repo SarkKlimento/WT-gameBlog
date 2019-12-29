@@ -22,6 +22,15 @@ switch ($_POST["type"]) {
     case "banner":
         loadBanner();
         break;
+    case "userName":
+        getUserName();
+        break;
+}
+
+function getUserName() {
+    $userId = $_POST["userId"];
+
+    echo json_encode(Database::query("SELECT * FROM users WHERE id='${userId}'")[0]["userName"]);
 }
 
 function loadNews()

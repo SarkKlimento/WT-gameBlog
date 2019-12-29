@@ -1,7 +1,11 @@
 let userId;
+let userName;
 let currentPage;
+let operation;
 
 function load(page) {
+    operation = "reg";
+
     $.ajax({
         type: "POST",
         url: 'php/news.php',
@@ -14,14 +18,15 @@ function load(page) {
         console.log('fail');
         console.log(data)
     });
-
-    userId = 'someId';
-    document.cookie = "userId=" + userId;
+    console.log(document.cookie);
+    userId = document.cookie.replace("userId=", '');
 
     if (userId && userId.length > 0) {
+        loadUser();
         $("#login-click-button").addClass("display-none");
         $("#lc-click-button").removeClass("display-none");
     } else {
+        $("#user").addClass("display-none");
         $("#login-click-button").removeClass("display-none");
         $("#lc-click-button").addClass("display-none");
     }
@@ -45,6 +50,22 @@ function createNewsElement(value) {
         elements = elements.replace("{footer}", value.postDate);
         $("#body-content").append($(elements));
     }
+}
+
+function loadUser() {
+    $.ajax({
+        type: "POST",
+        url: 'php/news.php',
+        dataType: 'json',
+        data: {type: "userName", userId: userId}
+    }).done(data => {
+        $("#user").removeClass("display-none");
+        userName = data;
+        $("#userNameDisplay").prop('innerText', userName);
+    }).fail(data => {
+        console.log('fail');
+        console.log(data)
+    });
 }
 
 function createBanner() {
@@ -78,6 +99,8 @@ function createBannerRow(value) {
 }
 
 function modalChange(value) {
+    operation = value;
+
     if (value === 'login') {
         $("#email-field").addClass("display-none");
         $("#reg-text").addClass("display-none");
@@ -87,6 +110,43 @@ function modalChange(value) {
         $("#reg-text").removeClass("display-none");
         $("#login-text").addClass("display-none");
     }
+}
+
+function login() {
+    const userN = $("#username").val();
+    const userP = $("#password").val();
+    const userE = $("#email").val();
+
+    if ((operation === "reg" && userE && userN && userP) || (operation === "login" && userP && userN)) {
+        $.ajax({
+            type: "POST",
+            url: 'php/user.php',
+            dataType: 'json',
+            data: {operation: operation, userName: userN, email: userE, password: userP}
+        }).done(data => {
+            if (data && data.length > 0) {
+                userId = data;
+                document.cookie = "userId=" + userId + ";path=/;";
+
+                loadUser();
+                $("#login-click-button").addClass("display-none");
+                $("#lc-click-button").removeClass("display-none");
+                $('#loginModal').modal('hide');
+            }
+        }).fail(data => {
+            console.log('fail');
+            console.log(data)
+        });
+    }
+}
+
+function logout() {
+    userId = '';
+    document.cookie = "userId=" + userId+ ";path=/;";
+    userName = '';
+    $("#user").addClass("display-none");
+    $("#login-click-button").removeClass("display-none");
+    $("#lc-click-button").addClass("display-none");
 }
 
 load(getURLParameter("page", 1));
